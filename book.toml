@@ -1,0 +1,14 @@
+[book]
+authors = ["Maxim Kim"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Maxim Kim"
+
+[build]
+build-dir = "docs"
+create-missing = false
+
+[output.html.playpen]
+copyable = false
+editable = true

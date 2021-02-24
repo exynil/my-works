@@ -1,0 +1,399 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Maxim Kim</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">Что это</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Мои работы</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="my-works/classic-snake-ai.html"><strong aria-hidden="true">1.1.</strong> ИИ для змейки</a></li><li class="chapter-item expanded "><a href="my-works/translit.html"><strong aria-hidden="true">1.2.</strong> Translit</a></li><li class="chapter-item expanded "><a href="my-works/helper.html"><strong aria-hidden="true">1.3.</strong> Помощник</a></li><li class="chapter-item expanded "><a href="my-works/labyrinth-cpp.html"><strong aria-hidden="true">1.4.</strong> Лабиринт на C++</a></li><li class="chapter-item expanded "><a href="my-works/labyrinth-csharp.html"><strong aria-hidden="true">1.5.</strong> Лабиринт на C#</a></li><li class="chapter-item expanded "><a href="my-works/linear-equation.html"><strong aria-hidden="true">1.6.</strong> Linear equation</a></li><li class="chapter-item expanded "><a href="my-works/i3lock-editor.html"><strong aria-hidden="true">1.7.</strong> i3lock editor</a></li><li class="chapter-item expanded "><a href="my-works/ping-pong.html"><strong aria-hidden="true">1.8.</strong> Пинг понг</a></li><li class="chapter-item expanded "><a href="my-works/time.html"><strong aria-hidden="true">1.9.</strong> Время</a></li><li class="chapter-item expanded "><a href="my-works/dictionary-generator.html"><strong aria-hidden="true">1.10.</strong> Генератор словаря</a></li><li class="chapter-item expanded "><a href="my-works/memory-trainer.html"><strong aria-hidden="true">1.11.</strong> Тренировка памяти</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Maxim Kim</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#Что-это" id="Что-это">Что это?</a></h1>
+<p>Здесь собраны мои некоторые мелкие работы, большинство из них написаны ужасно, но что поделать, все с чего-то начинают. Надеюсь, вы не потеряете сознание от моего г****кода.</p>
+<ul>
+<li><a href="">Мои работы</a>
+<ul>
+<li><a href="my-works/classic-snake-ai.html">ИИ для змейки</a></li>
+<li><a href="my-works/translit.html">Translit</a></li>
+<li><a href="my-works/helper.html">Помощник</a></li>
+<li><a href="my-works/labyrinth-cpp.html">Лабиринт на C++</a></li>
+<li><a href="my-works/labyrinth-csharp.html">Лабиринт на C#</a></li>
+<li><a href="my-works/linear-equation.html">Linear equation</a></li>
+<li><a href="my-works/i3lock-editor.html">i3lock editor</a></li>
+<li><a href="my-works/ping-pong.html">Пинг понг</a></li>
+<li><a href="my-works/time.html">Время</a></li>
+<li><a href="my-works/dictionary-generator.html">Генератор словаря</a></li>
+<li><a href="my-works/memory-trainer.html">Тренировка памяти</a></li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#ИИ-для-змейки" id="ИИ-для-змейки">ИИ для змейки</a></h1>
+<h2><a class="header" href="#В-двух-словах" id="В-двух-словах">В двух словах</a></h2>
+<p>Небольшой эксперимент с генетическими алгоримами и нейросетью.</p>
+<h2><a class="header" href="#Подробнее" id="Подробнее">Подробнее</a></h2>
+<p>В этой работе я использовал генетические алгоритмы и простейшую нейронную сеть чтобы научить змейку самостоятельно находить яблоки.</p>
+<p>Рекорд 66 яблок.</p>
+<h2><a class="header" href="#Где-посмотреть" id="Где-посмотреть">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/classic-snake-ai">https://github.com/exynil/classic-snake-ai</a></p>
+<h2><a class="header" href="#Скриншоты" id="Скриншоты">Скриншоты</a></h2>
+<h3><a class="header" href="#На-пути-к-рекорду" id="На-пути-к-рекорду">На пути к рекорду</a></h3>
+<img src="my-works/./../screenshots/classic-snake-ai/1.jpg">
+<h3><a class="header" href="#Видимые-секторы-змейки" id="Видимые-секторы-змейки">Видимые секторы змейки</a></h3>
+<img src="my-works/./../screenshots/classic-snake-ai/2.jpg">
+<h1><a class="header" href="#translit" id="translit">Translit</a></h1>
+<h2><a class="header" href="#В-двух-словах-1" id="В-двух-словах-1">В двух словах</a></h2>
+<p>Программа для транслитерации документов.</p>
+<h2><a class="header" href="#Подробее" id="Подробее">Подробее</a></h2>
+<p>Программа связана с переходом казахского языка с кириллицы на латиницу. Приложение транслитерирует документы с кирилицы на латиницу.</p>
+<p>Поддерживаемые форматы:</p>
+<ul>
+<li>
+<p>Документы Word: doc, docx</p>
+</li>
+<li>
+<p>Таблицы Excel: xls, xlsx</p>
+</li>
+<li>
+<p>Презентации Power Point: ppt, pptx</p>
+</li>
+<li>
+<p>Документы PDF: pdf</p>
+</li>
+<li>
+<p>Документы RTF: rtf</p>
+</li>
+<li>
+<p>Текстовые документы: txt</p>
+</li>
+</ul>
+<p>Идея возникла когда услышал от преподавателя о том как им трудно переделывать уже имеющиеся документы, учебные пособия, презентации, силлабусы на казахском языке с кириллицы на латиницу. Пришел домой написал за вечер маленький прототип, решил удивить преподавателя, преподавателю понравилось. И я продолжил расширять программу, ею начали пользоваться на всей кафедре казахского языка, чему я был очень рад. По их словам, программа сделала массу работы, которую было бы трудно делать в ручную. Я даже не подозревал что она сэкономит людям массу времени. Рад что помог людям. К сожелению преподаватель попросил не распространять программу, из-за чего программа не известна вне моего университета, и просто работает локально на кафедре.</p>
+<h2><a class="header" href="#Где-посмотреть-1" id="Где-посмотреть-1">Где посмотреть?</a></h2>
+<p>Исходный код недоступен.</p>
+<h2><a class="header" href="#Скриншоты-1" id="Скриншоты-1">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/translit/1.jpg">
+<img src="my-works/./../screenshots/translit/2.jpg"><h1><a class="header" href="#Помощник" id="Помощник">Помощник</a></h1>
+<h2><a class="header" href="#В-двух-словах-2" id="В-двух-словах-2">В двух словах</a></h2>
+<p>Программа шпаргалка для списывания ответов.</p>
+<h2><a class="header" href="#Подробнее-1" id="Подробнее-1">Подробнее</a></h2>
+<p>Программа написана в помощь мне и моим друзьям сдавать тесты на экзаменах. У меня в университете при сдаче тестов, блокируется доступ к операционной системе программой тестирования. Она перекрывает все обычные окна и это не позволяет студенту открывать браузер или любую другую программу для списывания. Моя программа при наведении мыши, всплывает поверх программы тестирования. Она имеет очень высокую прозрачность, ее спокойно видит студент, но не видит преподаватель издалека. При отведение мыши, программа моментально скрывается. Все что требуется от студента, предварительно подготовить документ шпаргалку для программы и запустить ее перед тестированием.</p>
+<h2><a class="header" href="#Где-посмотреть-2" id="Где-посмотреть-2">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/Helper">https://github.com/exynil/Helper</a></p>
+<h2><a class="header" href="#Скриншоты-2" id="Скриншоты-2">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/helper/1.gif">
+<img src="my-works/./../screenshots/helper/2.jpg"><h1><a class="header" href="#Лабиринт-на-С" id="Лабиринт-на-С">Лабиринт на С++</a></h1>
+<h2><a class="header" href="#В-двух-словах-3" id="В-двух-словах-3">В двух словах</a></h2>
+<p>Генератор лабиринтов на C++ работающий в консоли</p>
+<h2><a class="header" href="#Подробнее-2" id="Подробнее-2">Подробнее</a></h2>
+<p>Экзаменационное задание по C++ в Компьютерной Академии ШАГ.</p>
+<p>Возможности:</p>
+<ul>
+<li>Геренирация лабиринтов</li>
+<li>Решение лабиринтов</li>
+<li>Сохранение лабиринтов в файл</li>
+</ul>
+<h2><a class="header" href="#Где-посмотреть-3" id="Где-посмотреть-3">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/labyrinth-cpp">https://github.com/exynil/labyrinth-cpp</a></p>
+<h2><a class="header" href="#Скриншоты-3" id="Скриншоты-3">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/labyrinth-cpp/1.jpg">
+<img src="my-works/./../screenshots/labyrinth-cpp/2.jpg"><h1><a class="header" href="#Лабиринт-на-c" id="Лабиринт-на-c">Лабиринт на C#</a></h1>
+<h2><a class="header" href="#В-двух-словах-4" id="В-двух-словах-4">В двух словах</a></h2>
+<p>Генератор лабиринтов на C++ работающий в консоли</p>
+<h2><a class="header" href="#Подробнее-3" id="Подробнее-3">Подробнее</a></h2>
+<p>Переписал генератор лабиринтов с C++ на C#</p>
+<p>Возможности:</p>
+<ul>
+<li>Геренирация лабиринтов</li>
+<li>Решение лабиринтов</li>
+<li>Сохранение лабиринтов в файл</li>
+<li>Редактор лабиринтов</li>
+</ul>
+<h2><a class="header" href="#Где-посмотреть-4" id="Где-посмотреть-4">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/labyrinth-cpp">https://github.com/exynil/labyrinth-cpp</a></p>
+<h2><a class="header" href="#Скриншоты-4" id="Скриншоты-4">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/labyrinth-csharp/1.gif">
+<img src="my-works/./../screenshots/labyrinth-csharp/2.jpg"><h1><a class="header" href="#linear-equation" id="linear-equation">Linear equation</a></h1>
+<h2><a class="header" href="#В-двух-словах-5" id="В-двух-словах-5">В двух словах</a></h2>
+<p>Решение задач линейных уравнений с графическим методом.</p>
+<h2><a class="header" href="#Подробнее-4" id="Подробнее-4">Подробнее</a></h2>
+<p>Это работа часть одного задания в универе, мне хотелось визуально показать область допустимых значений. Программа может быстро найти область допустимых значений системы линейных уравнений и отрисовать область если решение имеется.</p>
+<h2><a class="header" href="#Где-посмотреть-5" id="Где-посмотреть-5">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/linear-equation">https://github.com/exynil/linear-equation</a></p>
+<h2><a class="header" href="#Скриншоты-5" id="Скриншоты-5">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/linear-equation/1.jpg">
+<img src="my-works/./../screenshots/linear-equation/2.jpg"><h1><a class="header" href="#i3lock-editor" id="i3lock-editor">i3lock editor</a></h1>
+<h2><a class="header" href="#В-двух-словах-6" id="В-двух-словах-6">В двух словах</a></h2>
+<p>Графический редактор i3lock-color</p>
+<h2><a class="header" href="#Подробнее-5" id="Подробнее-5">Подробнее</a></h2>
+<p>i3lock-color это блокировщий системы для X11 в GNU/Linux. Настраивать его очень кропотливое занятие, потому мне захотелось сделать визаульный редактор в помощь сообществу. Редактор позволяет полностью изменять внешний вид экрана блокировки и генерировать конфигурацию в двух удобных вариантах.</p>
+<h2><a class="header" href="#Где-посмотреть-6" id="Где-посмотреть-6">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/i3lock-editor">https://github.com/exynil/i3lock-editor</a></p>
+<h2><a class="header" href="#Скриншоты-6" id="Скриншоты-6">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/i3lock-editor/1.jpg">
+<img src="my-works/./../screenshots/i3lock-editor/2.jpg"><h1><a class="header" href="#Пинг-Понг" id="Пинг-Понг">Пинг-Понг</a></h1>
+<h2><a class="header" href="#В-двух-словах-7" id="В-двух-словах-7">В двух словах</a></h2>
+<p>Пинг-понг</p>
+<h2><a class="header" href="#Подробнее-6" id="Подробнее-6">Подробнее</a></h2>
+<p>Эксперементировал с Canvas(HTML)</p>
+<h2><a class="header" href="#Где-посмотреть-7" id="Где-посмотреть-7">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/ping-pong">https://github.com/exynil/ping-pong</a></p>
+<h2><a class="header" href="#Скриншоты-7" id="Скриншоты-7">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/ping-pong/1.jpg"><h1><a class="header" href="#Время" id="Время">Время</a></h1>
+<h2><a class="header" href="#В-двух-словах-8" id="В-двух-словах-8">В двух словах</a></h2>
+<p>Заставка показывающая день месяц и год в процентах</p>
+<h2><a class="header" href="#Подробнее-7" id="Подробнее-7">Подробнее</a></h2>
+<p>Эксперементировал с Canvas(HTML)</p>
+<h2><a class="header" href="#Где-посмотреть-8" id="Где-посмотреть-8">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/time">https://github.com/exynil/time</a></p>
+<h2><a class="header" href="#Скриншоты-8" id="Скриншоты-8">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/time/1.jpg"><h1><a class="header" href="#Генератор-словаря" id="Генератор-словаря">Генератор словаря</a></h1>
+<h2><a class="header" href="#В-двух-словах-9" id="В-двух-словах-9">В двух словах</a></h2>
+<p>Генератор словаря</p>
+<h2><a class="header" href="#Подробнее-8" id="Подробнее-8">Подробнее</a></h2>
+<p>Генерирует словарь для модуля Word Generator в программе Electronics Workbench.</p>
+<h2><a class="header" href="#Где-посмотреть-9" id="Где-посмотреть-9">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/dictionary-generator">https://github.com/exynil/dictionary-generator</a></p>
+<h2><a class="header" href="#Скриншоты-9" id="Скриншоты-9">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/dictionary-generator/1.jpg"><h1><a class="header" href="#Тренировка-памяти" id="Тренировка-памяти">Тренировка памяти</a></h1>
+<h2><a class="header" href="#В-двух-словах-10" id="В-двух-словах-10">В двух словах</a></h2>
+<p>Тренировка и проверка вашей фотографической памяти</p>
+<h2><a class="header" href="#Подробнее-9" id="Подробнее-9">Подробнее</a></h2>
+<p>Эксперементировал с Canvas(HTML). </p>
+<p>Увидел гифку в соц. сетях как обезьна за банан решает подобный тест. Хотел попробовать пройти сам, но в интренете не нашлось. Пришлось делать самому. Как оказалось у обзъян очень хорошо развита фотографическая память.</p>
+<h2><a class="header" href="#Где-посмотреть-10" id="Где-посмотреть-10">Где посмотреть?</a></h2>
+<p><a href="https://github.com/exynil/memory-trainer">https://github.com/exynil/memory-trainer</a></p>
+<h2><a class="header" href="#Скриншоты-10" id="Скриншоты-10">Скриншоты</a></h2>
+<img src="my-works/./../screenshots/memory-trainer/1.jpg">
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
